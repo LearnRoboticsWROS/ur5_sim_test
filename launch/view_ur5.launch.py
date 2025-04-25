@@ -26,6 +26,7 @@ def generate_launch_description():
                 "ur20",
                 "ur30",
             ],
+            default_value="ur5",
         )
     )
     declared_arguments.append(
@@ -110,6 +111,8 @@ def generate_launch_description():
             tf_prefix,
         ]
     )
+
+
     robot_description = {
         "robot_description": ParameterValue(value=robot_description_content, value_type=str)
     }
