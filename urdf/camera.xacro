@@ -18,7 +18,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.dae"/>
+                <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.stl"/>
             </geometry>
         </collision>
     </link>
@@ -65,6 +65,15 @@
             </plugin>
         </sensor>
 
+    </gazebo>
+
+    <gazebo reference="camera_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.stl"/>
+            </geometry>
+            <material>Gazebo/Red</material>
+        </visual>
     </gazebo>
 
 
