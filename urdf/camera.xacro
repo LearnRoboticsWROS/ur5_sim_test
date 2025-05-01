@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+
     <link name="camera_link">
         <inertial>
             <origin xyz="-0.00936000000 -0.00003000000 -0.00273000000" rpy="0 0 0"/>
@@ -13,12 +18,14 @@
             <geometry>
                 <!-- <box size="0.01 0.03 0.03" /> -->
                 <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.stl"/>
+     
             </geometry>
             <material name="red"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.stl"/>
+                <mesh filename="package://ur5_sim/meshes/sensors/camera/kinetic.dae"/>
+
             </geometry>
         </collision>
     </link>
@@ -39,7 +46,16 @@
     </joint>
 
     <gazebo reference="camera_link">
-        <material>Gazebo/Red</material>
+
+        <visual>
+            <geometry>
+                <mesh>
+                    <uri>package://ur5_sim/meshes/sensors/camera/kinetic.stl</uri>
+                </mesh>
+            </geometry>
+            <material>Gazebo/Red</material>
+        </visual>
+        <!-- <material>Gazebo/Red</material> -->
 
         <sensor name="camera" type="depth">
             <pose> 0 0 0 0 0 0 </pose>

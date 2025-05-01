@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <!-- <robot xmlns:xacro="http://wiki.ros.org/xacro" name="$(arg name)"> -->
-<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+<!-- <robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur"> -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur">
+
    <xacro:arg name="name" default="ur"/>
-   <xacro:include filename="$(find ur5_sim)/urdf/ur5_macro.xacro"/>
    <xacro:include filename="$(find ur5_sim)/urdf/camera.xacro"/>
+   <xacro:include filename="$(find ur5_sim)/urdf/ur5_macro.xacro"/>
+   
 
    <!-- possible 'ur_type' values: ur3, ur3e, ur5, ur5e, ur7e, ur10, ur10e, ur12e, ur16e, ur20, ur30 -->
    <!-- the default value should raise an error in case this was called without defining the type -->
