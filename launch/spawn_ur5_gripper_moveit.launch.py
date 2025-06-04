@@ -142,6 +142,8 @@ def generate_launch_description():
     config_dict = moveit_config.to_dict()
     config_dict.update(use_sim_time)
 
+    config_dict["robot_description_kinematics"] = moveit_config.robot_description_kinematics["robot_description_kinematics"]
+
     move_group_node = Node(
         package="moveit_ros_move_group",
         executable="move_group",
